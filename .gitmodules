@@ -1,0 +1,3 @@
+[submodule "d20.js"]
+	path = d20.js
+	url = https://github.com/RicardoSantos2014/d20.js.git
