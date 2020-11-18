@@ -1,0 +1,28 @@
+h1
+{
+    color: brown;
+}
+
+.divNome
+{
+    width: 40%;
+    float: left;
+}
+
+.divAtaque
+{
+    width: 20%;
+    float: left;
+}
+
+.divDano
+{
+    width: 20%;
+    float: left;
+}
+
+.divDefesa
+{
+    width: 20%;
+    float: left;
+}
