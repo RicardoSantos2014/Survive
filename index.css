@@ -11,18 +11,24 @@ h1
 
 .divAtaque
 {
-    width: 20%;
+    width: 15%;
     float: left;
 }
 
 .divDano
 {
-    width: 20%;
+    width: 15%;
     float: left;
 }
 
 .divDefesa
 {
-    width: 20%;
+    width: 15%;
+    float: left;
+}
+
+.divVida
+{
+    width: 15%;
     float: left;
 }
