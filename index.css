@@ -5,30 +5,36 @@ h1
 
 .divNome
 {
-    width: 40%;
+    width: 20%;
     float: left;
 }
 
 .divAtaque
 {
-    width: 15%;
+    width: 10%;
     float: left;
 }
 
 .divDano
 {
-    width: 15%;
+    width: 10%;
     float: left;
 }
 
 .divDefesa
 {
-    width: 15%;
+    width: 10%;
     float: left;
 }
 
 .divVida
 {
-    width: 15%;
+    width: 10%;
+    float: left;
+}
+
+.classCabecalho
+{
+    width: 100%;
     float: left;
 }

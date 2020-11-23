@@ -15,32 +15,48 @@
         </div>
         <div>
             <form>
-                <label class="labelDoInput">Nome do personagem:</label><input type="text" id="nomePersonagem"/> <br/> <br/>
-                <label class="labelDoInput">Ataque do personagem:</label><input type="number" pattern="[0-9]*" id="ataquePersonagem"/> <br/> <br/>
-                <label class="labelDoInput">Dano do personagem:</label><input type="text" id="danoPersonagem"/> <br/> <br/>
-                <label class="labelDoInput">Defesa do personagem:</label><input type="number" pattern="[0-9]*" id="defesaPersonagem"/> <br/> <br/>
-                <label class="labelDoInput">Pontos de vida do personagem:</label><input type="number" pattern="[0-9]*" id="pontosDeVidaPersonagem"/>
+                <div class="classCabecalho">
+                <label class="divNome">Nome do personagem:</label>
+                <label class="divAtaque">Ataque do personagem:</label>
+                <label class="divDano">Dano do personagem:</label>
+                <label class="divDefesa">Defesa do personagem:</label>
+                <label class="divVida">Pontos de vida do personagem:</label></div>
+                <br/>
+                <div class="classCabecalho" id="personagensDaParty"></div>
+                <br/>
+                <div class="classCabecalho">
+                <input type="text" id="nomePersonagem"/>
+                <input type="number" pattern="[0-9]*" id="ataquePersonagem"/>
+                <input type="text" id="danoPersonagem"/>
+                <input type="number" pattern="[0-9]*" id="defesaPersonagem"/>
+                <input type="number" pattern="[0-9]*" id="pontosDeVidaPersonagem"/></div>
                 <br/>
                 <input type="button" id="btnAddPartyMember" value="Adiciona Personagem">
+                <br/>
             </form>
-            <div id="personagensDaParty">
-
-            </div>
+            
         </div>
         <div>
             <form>
-                <label>Nome do inimigo:</label><input type="text" id="nomeInimigo"/> <br/> <br/>
-                <label>Ataque do inimigo:</label><input type="number" pattern="[0-9]*" id="ataqueInimigo"/> <br/> <br/>
-                <label>Dano do inimigo:</label><input type="text" id="danoInimigo"/> <br/> <br/>
-                <label>Defesa do inimigo:</label><input type="number" pattern="[0-9]*" id="defesaInimigo"/> <br/> <br/>
-                <label>Pontos de vida do inimigo:</label><input type="number" pattern="[0-9]*" id="pontosDeVidaInimigo"/>
+                <label class="divNome">Nome do inimigo:</label>
+                <label class="divAtaque">Ataque do inimigo:</label>
+                <label class="divDano">Dano do inimigo:</label>
+                <label class="divDefesa">Defesa do inimigo:</label>
+                <label class="divVida">Pontos de vida do inimigo:</label>
                 <br/>
+                <div id="inimigosDaParty"></div>
+                <br/>
+                <input type="text" id="nomeInimigo"/>
+                <input type="number" pattern="[0-9]*" id="ataqueInimigo"/>
+                <input type="text" id="danoInimigo"/>
+                <input type="number" pattern="[0-9]*" id="defesaInimigo"/>
+                <input type="number" pattern="[0-9]*" id="pontosDeVidaInimigo"/>
+                <br/>
+
                 <!--Por enquanto vamos deixar somente um inimigo para possibilitar os cálculos-->
                 <input type="button" class="btnCalcular" id="botaoCalcular" value="Calcular"/>
             </form>
-            <div id="inimigosDaParty">
-
-            </div>
+            
         </div>
         <!-- <div class="classBotaoCalcular">
             <input type="button" class="btnCalcular" id="botaoCalcular" value="Calcular"/>

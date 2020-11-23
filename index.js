@@ -14,17 +14,6 @@ var diferencaDeAcerto = [];
 
 var chanceDeAcerto = [];
 
-// document.onload = () => {
-//     button = document.getElementById("btnAddPartyMember").addEventListener('click', addPlayerToPartyFunction);
-//     partyList = document.getElementById("personagensDaParty");
-//     nomePersonagem = document.getElementById("nomePersonagem");
-//     ataquePersonagem = document.getElementById("ataquePersonagem");
-// }
-
-// function addPlayerToPartyFunction() {
-//     partyList.innerHTML = `<div> ${nomePersonagem.value} </div>`;
-// }
-
 $(document).ready(function(){
     $('#nomePersonagem').val("");
     $('#ataquePersonagem').val("");
@@ -86,7 +75,6 @@ $(document).ready(function(){
             $('#defesaInimigo').val("");
             $('#pontosDeVidaInimigo').val("");
         }
-        //$(`<p> <div> Os personagens têm ${calcularChanceDeVitoria()}% de chance de vencer a batalha. </div> </p>`).appendTo('#relatorioDeCombate');
         $(`<p> <div> <h1 class="tituloRelatorio"> Relatório de combate contra o ${inimigos[0].nome} </h1> </div> </p>`).appendTo('#relatorioDeCombate');
 
         calcularDiferencaDeAcerto();
@@ -100,9 +88,11 @@ $(document).ready(function(){
         });
 
         danoPartyMedio = danoMedioParty();
+        turnosDoCombate = (inimigos[0].vida/danoPartyMedio).toFixed(2);
+        taxaDeAcerto = chanceDeAcertoTotal().toFixed(2);
 
-        $(`<br/> <br/> <div> <p> O dano total da party por turno é de ${danoPartyMedio}, o que significa que o combate dura no mínimo ${(inimigos[0].vida/danoPartyMedio).toFixed(2)} 
-            turnos para o fim do combate. </p> </div> </p>`).appendTo('#relatorioDeCombate');
+        $(`<br/> <br/> <div> <p> O dano total da party por turno é de ${danoPartyMedio}, o que significa que o combate dura no mínimo ${turnosDoCombate} 
+            turnos para o fim do combate com probabiliadde de ${taxaDeAcerto**turnosDoCombate}. </p> </div> </p>`).appendTo('#relatorioDeCombate');
 
     });
 
@@ -126,6 +116,17 @@ $(document).ready(function(){
       });
       
       return danoTotal.toFixed(2);
+  }
+
+  function chanceDeAcertoTotal() {
+      probabilidadeTotal = 1.0;
+
+      chanceDeAcerto.forEach((valor, index) => {
+          probabilidadeTotal *= valor;
+      });
+
+      return probabilidadeTotal;
+      
   }
 
   function calcularDiferencaDeAcerto() {
