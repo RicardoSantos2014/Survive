@@ -79,11 +79,11 @@ $(document).ready(function(){
                 vida: $('#pontosDeVidaInimigo').val(),
             };
             inimigos.push(personagem)
-            $(`<p> <div class="divNome"> ${personagem.nome} </div>
-                    <div class="divAtaque"> ${personagem.ataque} </div>
-                    <div class="divDano"> ${personagem.dano} </div>
-                    <div class="divDefesa"> ${personagem.defesa} </div> 
-                    <div class="divVida"> ${personagem.vida} </div> </p> <br/>`).appendTo('#inimigosDaParty');
+            $(`<div class="divTableCell">${personagem.nome}</div>
+                <div class="divTableCell">${personagem.ataque}</div>
+                <div class="divTableCell">${personagem.dano}</div>
+                <div class="divTableCell">${personagem.defesa}</div>
+                <div class="divTableCell">${personagem.vida}</div>`).appendTo('#inimigosDaParty');
             $('#nomeInimigo').val("");
             $('#ataqueInimigo').val("");
             $('#danoInimigo').val("");
@@ -119,8 +119,8 @@ $(document).ready(function(){
         turnosDoCombate = (inimigos[0].vida/danoPartyMedio).toFixed(2);
         taxaDeAcerto = chanceDeAcertoTotal().toFixed(2);
 
-        $(`<br/> <br/> <div> <p> O dano total da party por turno é de ${danoPartyMedio}, o que significa que o combate dura no mínimo ${turnosDoCombate} 
-            turnos para o fim do combate com probabiliadde de ${taxaDeAcerto**turnosDoCombate}. </p> </div> </p>`).appendTo('#relatorioDeCombate');
+        $(`<br/> <div> <p> O dano total da party por turno é de ${danoPartyMedio} pontos de dano, o que significa que o combate dura no mínimo ${turnosDoCombate} 
+            até fim e a probabiliadde de isto acontecer é de aproximadamente ${(((taxaDeAcerto/100)**turnosDoCombate)*100).toFixed(2)}%. </p> </div> </p>`).appendTo('#relatorioDeCombate');
 
     });
 

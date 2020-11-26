@@ -18,7 +18,6 @@
     </div>
     <div>
         <form>
-
             <div class="divTable">
                 <div class="divTableBody">
                     <div class="divTableRow">
@@ -48,27 +47,41 @@
             
             <br />
         </form>
-
     </div>
     <div>
         <form>
-            <label class="divNome">Nome do inimigo:</label>
-            <label class="divAtaque">Ataque do inimigo:</label>
-            <label class="divDano">Dano do inimigo:</label>
-            <label class="divDefesa">Defesa do inimigo:</label>
-            <label class="divVida">Pontos de vida do inimigo:</label>
-            <br />
-            <div id="inimigosDaParty"></div>
-            <br />
-            <input type="text" id="nomeInimigo" />
-            <input type="number" pattern="[0-9]*" id="ataqueInimigo" />
-            <input type="text" id="danoInimigo" />
-            <input type="number" pattern="[0-9]*" id="defesaInimigo" />
-            <input type="number" pattern="[0-9]*" id="pontosDeVidaInimigo" />
-            <br />
+
+
+
+            <div class="divTable">
+                <div class="divTableBody">
+                    <div class="divTableRow">
+                        <div class="divTableCell">Nome do inimigo</div>
+                        <div class="divTableCell">Ataque do inimigo</div>
+                        <div class="divTableCell">Dano do inimigo</div>
+                        <div class="divTableCell">Defesa do inimigo</div>
+                        <div class="divTableCell">Pontos de vida do inimigo</div>
+                    </div>
+                    <div class="divTableRow" id="inimigosDaParty"></div>
+                    <div class="divTableRow">
+                        <div class="divTableCell"><input type="text" id="nomeInimigo" /></div>
+                        <div class="divTableCell"><input type="number" pattern="[0-9]*" id="ataqueInimigo" /></div>
+                        <div class="divTableCell"><input type="text" id="danoInimigo" /></div>
+                        <div class="divTableCell"><input type="number" pattern="[0-9]*" id="defesaInimigo" /></div>
+                        <div class="divTableCell"><input type="number" pattern="[0-9]*" id="pontosDeVidaInimigo" /></div>
+                    </div>
+                    <div class="divTableRow">
+                        <div class="divTableCell"><input type="button" class="btnCalcular" id="botaoCalcular" value="Calcular" /></div>
+                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">&nbsp;</div>
+                    </div>
+                </div>
+            </div>
 
             <!--Por enquanto vamos deixar somente um inimigo para possibilitar os cálculos-->
-            <input type="button" class="btnCalcular" id="botaoCalcular" value="Calcular" />
+            
         </form>
 
     </div>
