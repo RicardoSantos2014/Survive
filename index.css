@@ -1,7 +1,8 @@
 /* DivTable.com */
 .divTable{
 	display: table;
-	width: 100%;
+    width: auto;
+    padding-right: 15px;
 }
 .divTableRow {
 	display: table-row;
@@ -11,7 +12,7 @@
 	display: table-header-group;
 }
 .divTableCell, .divTableHead {
-	/* border: 1px solid #999999; */ 
+	/* border: 1px solid #999999;  */
 	display: table-cell;
 	padding: 3px 10px;
 }
@@ -29,45 +30,56 @@
 	display: table-row-group;
 }
 
-
+.formTotal{
+    display: table;
+    width: auto;
+}
+.formColumn{
+    display: table-cell;
+    width: 50%;
+}
 
 h1
 {
     color: brown;
 }
 
+input{
+    width: 95%;
+}
+
 .divNome
 {
-    width: 20%;
+    width: auto;
     float: left;
 }
 
 .divAtaque
 {
-    width: 10%;
+    width: auto;
     float: left;
 }
 
 .divDano
 {
-    width: 10%;
+    width: auto;
     float: left;
 }
 
 .divDefesa
 {
-    width: 10%;
+    width: auto;
     float: left;
 }
 
 .divVida
 {
-    width: 10%;
+    width: auto;
     float: left;
 }
 
 .classCabecalho
 {
-    width: 100%;
+    width: auto;
     float: left;
 }

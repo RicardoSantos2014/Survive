@@ -16,74 +16,81 @@
     <div>
         <h1>A party sobrevive?</h1>
     </div>
-    <div>
-        <form>
-            <div class="divTable">
-                <div class="divTableBody">
-                    <div class="divTableRow">
-                        <div class="divTableCell">Nome do personagem</div>
-                        <div class="divTableCell">Ataque do personagem</div>
-                        <div class="divTableCell">Dano do personagem</div>
-                        <div class="divTableCell">Defesa do personagem</div>
-                        <div class="divTableCell">Pontos de vida do personagem</div>
-                    </div>
-                    <div class="divTableRow" id="personagensDaParty"></div>
-                    <div class="divTableRow">
-                        <div class="divTableCell"><input type="text" id="nomePersonagem" /></div>
-                        <div class="divTableCell"><input type="number" pattern="[0-9]*" id="ataquePersonagem" /></div>
-                        <div class="divTableCell"><input type="text" id="danoPersonagem" /></div>
-                        <div class="divTableCell"><input type="number" pattern="[0-9]*" id="defesaPersonagem" /></div>
-                        <div class="divTableCell"><input type="number" pattern="[0-9]*" id="pontosDeVidaPersonagem" /></div>
-                    </div>
-                    <div class="divTableRow">
-                        <div class="divTableCell"><input type="button" id="btnAddPartyMember" value="Adiciona Personagem"></div>
-                        <div class="divTableCell">&nbsp;</div>
-                        <div class="divTableCell">&nbsp;</div>
-                        <div class="divTableCell">&nbsp;</div>
-                        <div class="divTableCell">&nbsp;</div>
-                    </div>
-                </div>
-            </div>
-            
-            <br />
-        </form>
-    </div>
-    <div>
-        <form>
-
-
-
-            <div class="divTable">
-                <div class="divTableBody">
-                    <div class="divTableRow">
-                        <div class="divTableCell">Nome do inimigo</div>
-                        <div class="divTableCell">Ataque do inimigo</div>
-                        <div class="divTableCell">Dano do inimigo</div>
-                        <div class="divTableCell">Defesa do inimigo</div>
-                        <div class="divTableCell">Pontos de vida do inimigo</div>
-                    </div>
-                    <div class="divTableRow" id="inimigosDaParty"></div>
-                    <div class="divTableRow">
-                        <div class="divTableCell"><input type="text" id="nomeInimigo" /></div>
-                        <div class="divTableCell"><input type="number" pattern="[0-9]*" id="ataqueInimigo" /></div>
-                        <div class="divTableCell"><input type="text" id="danoInimigo" /></div>
-                        <div class="divTableCell"><input type="number" pattern="[0-9]*" id="defesaInimigo" /></div>
-                        <div class="divTableCell"><input type="number" pattern="[0-9]*" id="pontosDeVidaInimigo" /></div>
-                    </div>
-                    <div class="divTableRow">
-                        <div class="divTableCell"><input type="button" class="btnCalcular" id="botaoCalcular" value="Calcular" /></div>
-                        <div class="divTableCell">&nbsp;</div>
-                        <div class="divTableCell">&nbsp;</div>
-                        <div class="divTableCell">&nbsp;</div>
-                        <div class="divTableCell">&nbsp;</div>
+    <div class="formTotal">
+        <div class="formColumn">
+            <p>Informações de cada personagem do grupo de aventureiros:</p>
+            <form>
+                <div class="divTable">
+                    <div class="divTableBody">
+                        <div class="divTableRow">
+                            <div class="divTableCell">Nome</div>
+                            <div class="divTableCell">Ataque</div>
+                            <div class="divTableCell">Dano</div>
+                            <div class="divTableCell">Defesa</div>
+                            <div class="divTableCell">Pontos de vida</div>
+                        </div>
+                        <div class="divTableRow" id="personagensDaParty"></div>
+                        <div class="divTableRow">
+                            <div class="divTableCell"><input type="text" id="nomePersonagem" /></div>
+                            <div class="divTableCell"><input type="number" pattern="[0-9]*" id="ataquePersonagem" />
+                            </div>
+                            <div class="divTableCell"><input type="text" id="danoPersonagem" /></div>
+                            <div class="divTableCell"><input type="number" pattern="[0-9]*" id="defesaPersonagem" />
+                            </div>
+                            <div class="divTableCell"><input type="number" pattern="[0-9]*"
+                                    id="pontosDeVidaPersonagem" /></div>
+                        </div>
+                        <div class="divTableRow">
+                            <div class="divTableCell"><input type="button" id="btnAddPartyMember"
+                                    value="Adiciona Personagem"></div>
+                            <div class="divTableCell">&nbsp;</div>
+                            <div class="divTableCell">&nbsp;</div>
+                            <div class="divTableCell">&nbsp;</div>
+                            <div class="divTableCell">&nbsp;</div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!--Por enquanto vamos deixar somente um inimigo para possibilitar os cálculos-->
-            
-        </form>
+                <br />
+            </form>
+        </div>
+        <div class="formColumn">
+            <p>Informações do inimigo do grupo de aventureiros:</p>
+            <form>
+                <div class="divTable">
+                    <div class="divTableBody">
+                        <div class="divTableRow">
+                            <div class="divTableCell">Nome</div>
+                            <div class="divTableCell">Ataque</div>
+                            <div class="divTableCell">Dano</div>
+                            <div class="divTableCell">Defesa</div>
+                            <div class="divTableCell">Pontos de vida</div>
+                        </div>
+                        <div class="divTableRow" id="inimigosDaParty"></div>
+                        <div class="divTableRow">
+                            <div class="divTableCell"><input type="text" id="nomeInimigo" /></div>
+                            <div class="divTableCell"><input type="number" pattern="[0-9]*" id="ataqueInimigo" /></div>
+                            <div class="divTableCell"><input type="text" id="danoInimigo" /></div>
+                            <div class="divTableCell"><input type="number" pattern="[0-9]*" id="defesaInimigo" /></div>
+                            <div class="divTableCell"><input type="number" pattern="[0-9]*" id="pontosDeVidaInimigo" />
+                            </div>
+                        </div>
+                        <div class="divTableRow">
+                            <div class="divTableCell"><input type="button" class="btnCalcular" id="botaoCalcular"
+                                    value="Calcular" /></div>
+                            <div class="divTableCell">&nbsp;</div>
+                            <div class="divTableCell">&nbsp;</div>
+                            <div class="divTableCell">&nbsp;</div>
+                            <div class="divTableCell">&nbsp;</div>
+                        </div>
+                    </div>
+                </div>
 
+                <!--Por enquanto vamos deixar somente um inimigo para possibilitar os cálculos-->
+
+            </form>
+
+        </div>
     </div>
     <!-- <div class="classBotaoCalcular">
             <input type="button" class="btnCalcular" id="botaoCalcular" value="Calcular"/>

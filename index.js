@@ -48,11 +48,12 @@ $(document).ready(function(){
                 vida: $('#pontosDeVidaPersonagem').val(),
             };
             party.push(personagem);
-            $(`<div class="divTableCell">${personagem.nome}</div>
+            $(` <div class="divTableCell">${personagem.nome}</div>
                 <div class="divTableCell">${personagem.ataque}</div>
                 <div class="divTableCell">${personagem.dano}</div>
                 <div class="divTableCell">${personagem.defesa}</div>
                 <div class="divTableCell">${personagem.vida}</div>`).appendTo('#personagensDaParty');
+
             $('#nomePersonagem').val("");
             $('#ataquePersonagem').val("");
             $('#danoPersonagem').val("");
@@ -78,7 +79,7 @@ $(document).ready(function(){
                 danoMedio: parseFloat(d20.meanDamage($('#ataqueInimigo').val())),
                 vida: $('#pontosDeVidaInimigo').val(),
             };
-            inimigos.push(personagem)
+            inimigos.push(personagem);
             $(`<div class="divTableCell">${personagem.nome}</div>
                 <div class="divTableCell">${personagem.ataque}</div>
                 <div class="divTableCell">${personagem.dano}</div>
@@ -89,6 +90,8 @@ $(document).ready(function(){
             $('#danoInimigo').val("");
             $('#defesaInimigo').val("");
             $('#pontosDeVidaInimigo').val("");
+
+            //$('#botaoCalcular').display = "none";
         }
 
         // In this line we display the enemy name to create the battle report
@@ -110,17 +113,19 @@ $(document).ready(function(){
          * Now, for each character the statistical elements are calculated and the 
          */
         party.forEach((persona, index) => {
-            $(`<p> <div> O personagem ${persona.nome} e precisa de ${diferencaDeAcerto[index]} ou mais para acertar, 
-                resultando em acertos ${chanceDeAcerto[index]}% das vezes com dano médio de ${persona.danoMedio} por ataque bem-sucedido, o 
-                que resulta em um dano médio de ${((chanceDeAcerto[index]/100)*persona.danoMedio).toFixed(2)} por turno de combate. </div> </p> `).appendTo('#relatorioDeCombate');
+            $(`<p> <div> O personagem ${persona.nome} precisa rolar ${diferencaDeAcerto[index]} ou mais em um d20 para acertar. Logo, faz ataques bem-sucedidos ${chanceDeAcerto[index]}%
+                das vezes, causando em média ${persona.danoMedio} pontos de dano por ataque bem-sucedido, resultando ${((chanceDeAcerto[index]/100)*persona.danoMedio).toFixed(2)} 
+                pontos de dano por turno de combate. </div> </p> `).appendTo('#relatorioDeCombate');
         });
 
         danoPartyMedio = danoMedioParty();
         turnosDoCombate = (inimigos[0].vida/danoPartyMedio).toFixed(2);
         taxaDeAcerto = chanceDeAcertoTotal().toFixed(2);
 
-        $(`<br/> <div> <p> O dano total da party por turno é de ${danoPartyMedio} pontos de dano, o que significa que o combate dura no mínimo ${turnosDoCombate} 
-            até fim e a probabiliadde de isto acontecer é de aproximadamente ${(((taxaDeAcerto/100)**turnosDoCombate)*100).toFixed(2)}%. </p> </div> </p>`).appendTo('#relatorioDeCombate');
+        $(`<br/> <div> <p> O dano médio total da party por turno é de ${danoPartyMedio} pontos de dano, o que significa que o combate dura no mínimo ${turnosDoCombate} turnos
+            até o fim. A probabiliadde de isto acontecer é de aproximadamente ${(((taxaDeAcerto/100)**turnosDoCombate)*100).toFixed(2)}%. </p> </div> </p>`).appendTo('#relatorioDeCombate');
+
+        
 
     });
 
