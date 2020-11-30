@@ -44,15 +44,17 @@ $(document).ready(function(){
                 ataque: $('#ataquePersonagem').val(),
                 dano: $('#danoPersonagem').val(),
                 defesa: $('#defesaPersonagem').val(),
-                danoMedio: parseFloat(d20.meanDamage($('#ataquePersonagem').val())),
+                danoMedio: d20.meanDamage($('#danoPersonagem').val()),
                 vida: $('#pontosDeVidaPersonagem').val(),
             };
             party.push(personagem);
-            $(` <div class="divTableCell">${personagem.nome}</div>
-                <div class="divTableCell">${personagem.ataque}</div>
-                <div class="divTableCell">${personagem.dano}</div>
-                <div class="divTableCell">${personagem.defesa}</div>
-                <div class="divTableCell">${personagem.vida}</div>`).appendTo('#personagensDaParty');
+            $('#characterDataInput').before(` <div class="divTableRow">
+                    <div class="divTableCell">${personagem.nome}</div>
+                    <div class="divTableCell">${personagem.ataque}</div>
+                    <div class="divTableCell">${personagem.dano}</div>
+                    <div class="divTableCell">${personagem.defesa}</div>
+                    <div class="divTableCell">${personagem.vida}</div>
+                </div>`);
 
             $('#nomePersonagem').val("");
             $('#ataquePersonagem').val("");
@@ -76,15 +78,15 @@ $(document).ready(function(){
                 ataque: $('#ataqueInimigo').val(),
                 dano: $('#danoInimigo').val(),
                 defesa: $('#defesaInimigo').val(),
-                danoMedio: parseFloat(d20.meanDamage($('#ataqueInimigo').val())),
+                danoMedio: d20.meanDamage(parseFloat($('#ataqueInimigo').val())),
                 vida: $('#pontosDeVidaInimigo').val(),
             };
             inimigos.push(personagem);
-            $(`<div class="divTableCell">${personagem.nome}</div>
+            $('#inimigosDaParty').before(`<div class="divTableCell">${personagem.nome}</div>
                 <div class="divTableCell">${personagem.ataque}</div>
                 <div class="divTableCell">${personagem.dano}</div>
                 <div class="divTableCell">${personagem.defesa}</div>
-                <div class="divTableCell">${personagem.vida}</div>`).appendTo('#inimigosDaParty');
+                <div class="divTableCell">${personagem.vida}</div>`);
             $('#nomeInimigo').val("");
             $('#ataqueInimigo').val("");
             $('#danoInimigo').val("");
@@ -109,6 +111,10 @@ $(document).ready(function(){
          */
         valorDanoTotalParty = danoTotalParty();
 
+        danoPartyMedio = danoMedioParty();
+        turnosDoCombate = (inimigos[0].vida/danoPartyMedio).toFixed(2);
+        taxaDeAcerto = chanceDeAcertoTotal().toFixed(2);
+
         /**
          * Now, for each character the statistical elements are calculated and the 
          */
@@ -118,9 +124,7 @@ $(document).ready(function(){
                 pontos de dano por turno de combate. </div> </p> `).appendTo('#relatorioDeCombate');
         });
 
-        danoPartyMedio = danoMedioParty();
-        turnosDoCombate = (inimigos[0].vida/danoPartyMedio).toFixed(2);
-        taxaDeAcerto = chanceDeAcertoTotal().toFixed(2);
+
 
         $(`<br/> <div> <p> O dano médio total da party por turno é de ${danoPartyMedio} pontos de dano, o que significa que o combate dura no mínimo ${turnosDoCombate} turnos
             até o fim. A probabiliadde de isto acontecer é de aproximadamente ${(((taxaDeAcerto/100)**turnosDoCombate)*100).toFixed(2)}%. </p> </div> </p>`).appendTo('#relatorioDeCombate');
@@ -169,6 +173,11 @@ $(document).ready(function(){
             diferencaDeAcerto.push((inimigos[0].defesa - personagemDaVez.ataque));
             chanceDeAcerto.push((100*(1 - (diferencaDeAcerto[index]/20))).toFixed(2));
             personagemDaVez.danoMedio = d20.meanDamage(personagemDaVez.dano).toFixed(2);
+          }
+          else
+          {
+              diferencaDeAcerto.push((inimigos[0].defesa - personagemDaVez.ataque));
+              chanceDeAcerto.push(100);
           }
       });
   }

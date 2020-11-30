@@ -16,6 +16,14 @@
     <div>
         <h1>A party sobrevive?</h1>
     </div>
+    <small>
+        <b>OBSERVAÇÕES:</b></small></br>
+        <ol>
+            <li>Os valores apresentados são estimativas aproximadas, não devem ser levadas em consideração à risca.</li>
+            <li>Somente funciona para cálculos em que os valores do d20 devem ser maiores que zero. Ou seja, em que o ataque dos personagens é menor que a defesa do inimigo.</li>
+            <li>Este sistema ainda não leva em consideração que o inimigo está atacando de volta. Esta funcionalidade será implementada futuramente.</li>
+        </ol>
+    </small>
     <div class="formTotal">
         <div class="formColumn">
             <p>Informações de cada personagem do grupo de aventureiros:</p>
@@ -29,8 +37,7 @@
                             <div class="divTableCell">Defesa</div>
                             <div class="divTableCell">Pontos de vida</div>
                         </div>
-                        <div class="divTableRow" id="personagensDaParty"></div>
-                        <div class="divTableRow">
+                        <div class="divTableRow" id="characterDataInput">
                             <div class="divTableCell"><input type="text" id="nomePersonagem" /></div>
                             <div class="divTableCell"><input type="number" pattern="[0-9]*" id="ataquePersonagem" />
                             </div>
@@ -50,9 +57,8 @@
                         </div>
                     </div>
                 </div>
-
-                <br />
             </form>
+
         </div>
         <div class="formColumn">
             <p>Informações do inimigo do grupo de aventureiros:</p>
@@ -66,8 +72,7 @@
                             <div class="divTableCell">Defesa</div>
                             <div class="divTableCell">Pontos de vida</div>
                         </div>
-                        <div class="divTableRow" id="inimigosDaParty"></div>
-                        <div class="divTableRow">
+                        <div class="divTableRow" id="inimigosDaParty">
                             <div class="divTableCell"><input type="text" id="nomeInimigo" /></div>
                             <div class="divTableCell"><input type="number" pattern="[0-9]*" id="ataqueInimigo" /></div>
                             <div class="divTableCell"><input type="text" id="danoInimigo" /></div>
@@ -97,7 +102,6 @@
         </div> -->
     <div id="relatorioDeCombate">
 
-    </div>
     </div>
 </body>
 

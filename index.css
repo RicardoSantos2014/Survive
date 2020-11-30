@@ -39,6 +39,17 @@
     width: 50%;
 }
 
+.tablePersonagens
+{
+    width: 90%;
+}
+
+.headerPersonagens
+{
+    background-color: brown;
+    color: white;
+}
+
 h1
 {
     color: brown;
